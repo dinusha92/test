@@ -34,23 +34,20 @@ pipeline {
    
    agent any
    
-   parameters {
-        gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
-    }
-   
+ 
    stages {
        
         stage('Preparation') {
     
             steps{
-                git branch: '${params.BRANCH}',
+                git branch: 'master',
                 url: 'https://github.com/dinusha92/test.git',
                 credentialsId: 'github-dinusha'
             }
         }
       stage('Hello') {
          steps {
-            echo "${params.BRANCH}"
+            echo "Hello"
          }
       }
    }
