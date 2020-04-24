@@ -50,6 +50,13 @@ pipeline {
             echo "Hello"
          }
       }
+
+      stage('Deploying to Kubernetes') {
+         steps {
+            echo "Deploying to Kubernetes"
+            sh 'apictl add api -n testintBranch --from-file=testintBranch/'
+         }
+      }
    }
 }
 
