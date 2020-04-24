@@ -54,6 +54,7 @@ pipeline {
       stage('Deploying to Kubernetes') {
          steps {
             echo "Deploying to Kubernetes"
+            sh 'apictl set mode --k8s'
             sh 'apictl add api -n testintBranch --from-file=testintBranch/'
          }
       }
