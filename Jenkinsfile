@@ -40,7 +40,7 @@ pipeline {
         stage('Preparation') {
     
             steps{
-                git branch: 'dinusha92-patch-1',
+                git branch: 'master',
                 url: 'https://github.com/dinusha92/test.git',
                 credentialsId: 'github-dinusha'
             }
